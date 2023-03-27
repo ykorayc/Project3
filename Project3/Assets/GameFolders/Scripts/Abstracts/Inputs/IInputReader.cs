@@ -8,6 +8,7 @@ namespace Project3.Abstracts.Inputs
     {
         Vector3 direction { get; }
         Vector2 rotation { get; }
+        bool isAttackButtonPress { get; }
     }
 
 }

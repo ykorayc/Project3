@@ -15,6 +15,7 @@ namespace Project3.Controllers
 
         [SerializeField] Transform _turnTransform;
 
+
         public Transform turnTransform => _turnTransform;  //Baska scriptlerde kullanabilmek icin Property'sini olusturmak zorundayiz.
 
         IInputReader _InputReader;
@@ -28,6 +29,8 @@ namespace Project3.Controllers
 
 
         CharacterAnimations _animations;
+
+        [SerializeField] WeaponController _currentWeapon;
         
 
         private void Awake()
@@ -44,6 +47,12 @@ namespace Project3.Controllers
             rotation = _InputReader.rotation;
             xRotation.RotationAciton(rotation.x, turnSpeed);
             yRotation.RotationAciton(rotation.y, turnSpeed);
+
+            if (_InputReader.isAttackButtonPress)
+            {
+                _currentWeapon.Atack();
+            }
+
         }
         private void FixedUpdate()
         {

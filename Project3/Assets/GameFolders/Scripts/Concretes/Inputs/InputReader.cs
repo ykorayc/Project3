@@ -10,6 +10,7 @@ namespace Project3.Inputs
 
         public Vector3 direction { get; private set; }
         public Vector2 rotation { get; private set; }
+        public bool isAttackButtonPress{ get; private set; }
 
         public void OnMove(InputAction.CallbackContext context)
         {
@@ -21,7 +22,10 @@ namespace Project3.Inputs
         {
             rotation = context.ReadValue<Vector2>();
         }
-
+        public void OnAttack(InputAction.CallbackContext context)
+        {
+            isAttackButtonPress = context.ReadValueAsButton();//bool deger aldigimizda ReadValueAsButton'u kullaniriz.
+        }
     }
 
 }
