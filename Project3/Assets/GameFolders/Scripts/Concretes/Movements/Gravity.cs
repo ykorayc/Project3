@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 namespace Project3.Movements
 {
+    [RequireComponent(typeof(CharacterController))]  //Eklendigi yerde CharacterController componneti olmak zorunda. Olmazsa calismaz. Character Controller kaldirilamaz.
     public class Gravity : MonoBehaviour
     {
         [SerializeField] float gravity = -9.81f;

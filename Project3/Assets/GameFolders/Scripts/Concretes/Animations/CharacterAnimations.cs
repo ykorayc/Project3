@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Project3.Controllers;
+using Project3.Abstracts.Controllers;
 namespace Project3.Animations
 {
     public class CharacterAnimations : MonoBehaviour
     {
         Animator _animator;
-        public CharacterAnimations(PlayerController _playerController)
+        public CharacterAnimations(IEntityController entity)
         {
-            _animator = _playerController.GetComponentInChildren<Animator>();
+            _animator = entity.transform.GetComponentInChildren<Animator>();
         }
         public void MoveAnimation(float moveSpeed)
         {

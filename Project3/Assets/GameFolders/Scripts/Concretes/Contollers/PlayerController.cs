@@ -5,9 +5,10 @@ using Project3.Abstracts.Inputs;
 using Project3.Abstracts.Movements;
 using Project3.Animations;
 using Project3.Movements;
+using Project3.Abstracts.Controllers;
 namespace Project3.Controllers
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IEntityController
     {
         [Header("Movement Information")]
         [SerializeField] float moveSpeed;
