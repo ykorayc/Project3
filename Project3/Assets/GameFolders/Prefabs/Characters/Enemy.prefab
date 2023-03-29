@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1466482622838008138}
   - component: {fileID: 849633184534581923}
   - component: {fileID: 849633184534581924}
+  - component: {fileID: 3425138525594563048}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 4531112650268972639}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1466482622838008138
 MonoBehaviour:
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cf900599db9f2499b738fb85ec54bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerPrefab: {fileID: 0}
 --- !u!195 &849633184534581923
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -56,12 +58,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 4821563845494023996}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.4
+  m_Radius: 0.3
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1.4
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -79,10 +81,23 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Height: 1.9536471
   m_Direction: 1
   m_Center: {x: 0, y: 0.8469465, z: 0}
+--- !u!114 &3425138525594563048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4821563845494023996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35164262d6676445a774d41980d2e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthInfo: {fileID: 11400000, guid: f7ff7cdfa2839814e8cc1bc0d6dee13f, type: 2}
 --- !u!1001 &4137408996287115700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -138,6 +153,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e9c259cb2c50ad44b977157ec6d8813c, type: 3}
       propertyPath: m_Name
       value: ZombieModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: e9c259cb2c50ad44b977157ec6d8813c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 92469681ec03dee42a8f778175b421da, type: 2}
+    - target: {fileID: 5866666021909216657, guid: e9c259cb2c50ad44b977157ec6d8813c, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

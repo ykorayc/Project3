@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 5}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 300}
   m_MaxSize: {x: 8096, y: 24288}
   vertical: 1
-  controlID: 102
+  controlID: 48
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -517,9 +517,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: b48f0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 10fbffff
+      m_ExpandedIDs: baf8ffffbef8ffffc2f8ffffc6f8ffffcaf8ffff1ef9ffff46f9ffff52f9ffff60faffff64faffff68faffff94faffffa0faffff10fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -851,7 +851,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.052514985, y: 0.583838, z: -0.037907515, w: 0.80931896}
     speed: 2
-    m_Value: {x: 0.05251498, y: 0.583838, z: -0.037907515, w: 0.8093189}
+    m_Value: {x: 0.052513447, y: 0.5838209, z: -0.037906405, w: 0.80929524}
   m_Size:
     m_Target: 3.2142897
     speed: 2
@@ -984,6 +984,8 @@ MonoBehaviour:
   m_BreadCrumbs:
   - m_Target: {fileID: 1957534473840500480, guid: 92469681ec03dee42a8f778175b421da, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
+  - m_Target: {fileID: 5989319928777742675, guid: 92469681ec03dee42a8f778175b421da, type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
   blendTreeGraph: {fileID: 0}
@@ -1036,22 +1038,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/GameFolders/Animations/ZombieAnimations
+    - Assets/GameFolders/Scripts/Abstracts/Combats
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/GameFolders/Animations/ZombieAnimations
+  - Assets/GameFolders/Scripts/Abstracts/Combats
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Github\Projects\Project3\Project3\Project3
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1e630000
-    m_LastClickedID: 25374
-    m_ExpandedIDs: 00000000e0620000e2620000e4620000e6620000e8620000ea62000010630000
+    scrollPos: {x: 0, y: 243}
+    m_SelectedIDs: 166f0000
+    m_LastClickedID: 28438
+    m_ExpandedIDs: 00000000e0620000e2620000e4620000e6620000e8620000ea62000010630000186300001a6300004e6300005063000062730000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1106,7 +1108,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300000000000052610000b861000064610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1178,7 +1180,7 @@ MonoBehaviour:
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Inspector
+    m_Text: Debug
     m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
@@ -1200,7 +1202,7 @@ MonoBehaviour:
   m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
-  m_InspectorMode: 0
+  m_InspectorMode: 1
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
