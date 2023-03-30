@@ -18,10 +18,13 @@ namespace Project3.ScriptableObjects
         [SerializeField] LayerMask layerMask;
         [SerializeField] int damage;
         [SerializeField] float attackMaxDelay;
+        [SerializeField] AnimatorOverrideController animatorOveride;
+
         public float _floatValue => floatValue;
         public LayerMask _layerMask => layerMask;
         public int _damage => damage;
         public float _attackMaxDelay => attackMaxDelay;
+        public AnimatorOverrideController _animatorOveride => animatorOveride;
 
         public IAttackType GetAttackType(Transform transform)
         {

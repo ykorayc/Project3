@@ -15,7 +15,7 @@ namespace Project3.Helpers
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawSphere(this.transform.position,_attackSO._floatValue);
+            Gizmos.DrawWireSphere(this.transform.position,_attackSO._floatValue);
         }
     }
 

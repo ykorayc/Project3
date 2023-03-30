@@ -7,10 +7,13 @@ namespace Project3.Inputs
 {
     public class InputReader : MonoBehaviour,IInputReader
     {
+        int _index;
 
         public Vector3 direction { get; private set; }
         public Vector2 rotation { get; private set; }
         public bool isAttackButtonPress{ get; private set; }
+
+        public bool isInventoryButtonPressed { get; private set; }
 
         public void OnMove(InputAction.CallbackContext context)
         {
@@ -25,6 +28,21 @@ namespace Project3.Inputs
         public void OnAttack(InputAction.CallbackContext context)
         {
             isAttackButtonPress = context.ReadValueAsButton();//bool deger aldigimizda ReadValueAsButton'u kullaniriz.
+        }
+        public void OnInventoryPressed(InputAction.CallbackContext context)
+        {
+            if (isInventoryButtonPressed && context.action.triggered) return;
+
+            StartCoroutine(WaitOneFrameAsync());
+            
+            IEnumerator WaitOneFrameAsync()
+            {
+                isInventoryButtonPressed = true && _index % 2 == 0;
+                yield return new WaitForEndOfFrame();
+                isInventoryButtonPressed = false;
+                _index++;
+            }
+            
         }
     }
 

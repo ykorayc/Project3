@@ -16,6 +16,7 @@ namespace Project3.Controllers
         LayerMask _layerMask;
 
         [SerializeField] AttackSO _attackSO;
+        public AttackSO attackSO => _attackSO;
         private void Awake()
         {
             _attackType = _attackSO.GetAttackType(transformObject);
@@ -37,7 +38,7 @@ namespace Project3.Controllers
             //     health.TakeDamage(damage);
             // }
             currentTime = 0f;
-            _attackType.AttackAction();
+         //   _attackType.AttackAction();
         }
        
 

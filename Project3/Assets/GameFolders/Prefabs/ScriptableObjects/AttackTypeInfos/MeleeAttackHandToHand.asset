@@ -19,3 +19,4 @@ MonoBehaviour:
     m_Bits: 2147483647
   damage: 1
   attackMaxDelay: 0.25
+  animatorOveride: {fileID: 22100000, guid: 94747a86711c6e74ab30e97b67d9c36e, type: 2}

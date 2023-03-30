@@ -5,6 +5,7 @@ using Project3.Abstracts.Inputs;
 using Project3.Abstracts.Movements;
 using Project3.Animations;
 using Project3.Movements;
+using Project3.Controllers;
 using Project3.Abstracts.Controllers;
 namespace Project3.Controllers
 {
@@ -31,8 +32,7 @@ namespace Project3.Controllers
 
         CharacterAnimations _animations;
 
-        [SerializeField] WeaponController _currentWeapon;
-        
+        InventoryController _inventory;
 
         private void Awake()
         {
@@ -41,6 +41,7 @@ namespace Project3.Controllers
             _animations = new CharacterAnimations(this);
             xRotation = new RotatorX(this);
             yRotation = new RotatorY(this);
+            _inventory = GetComponent<InventoryController>();
         }
         private void Update()
         {
@@ -51,7 +52,12 @@ namespace Project3.Controllers
 
             if (_InputReader.isAttackButtonPress)
             {
-                _currentWeapon.Atack();
+                //_currentWeapon.Atack();
+                _inventory.currentWeapon.Atack();
+            }
+            if (_InputReader.isInventoryButtonPressed)
+            {
+                _inventory.ChangeWeapon();
             }
 
         }
