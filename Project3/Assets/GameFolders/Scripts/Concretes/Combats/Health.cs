@@ -12,6 +12,7 @@ namespace Project3.Combats
         [SerializeField] HealthSO _healthInfo;
         public bool isDead => _currentHealth <= 0;
 
+        public event System.Action<int, int> OnTakeHit;
         private void Awake()
         {
             _currentHealth = _healthInfo._maxHealth;
@@ -20,6 +21,7 @@ namespace Project3.Combats
         {
             if (isDead) return;
             _currentHealth -= damage;
+            OnTakeHit?.Invoke(_currentHealth,_healthInfo._maxHealth);
         }
     }
 

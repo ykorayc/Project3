@@ -7,7 +7,7 @@ namespace Project3.Helpers
 {
     public class MeleeAttackRangeDisplay : MonoBehaviour
     {
-        [SerializeField] AttackSO _attackSO;
+        [SerializeField] float radius;
         private void OnDrawGizmos()
         {
             OnDrawGizmosSelected();
@@ -15,7 +15,7 @@ namespace Project3.Helpers
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(this.transform.position,_attackSO._floatValue);
+            Gizmos.DrawWireSphere(this.transform.position,radius);
         }
     }
 

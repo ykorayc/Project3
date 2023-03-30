@@ -70,6 +70,7 @@ namespace Project3.Controllers
         {
             //Animasyon Ýslemlerimizi LateUpdate'te yapariz.
             _animations.MoveAnimation(direction.magnitude);
+            _animations.AttackAnimation(_InputReader.isAttackButtonPress);
         }
 
     }

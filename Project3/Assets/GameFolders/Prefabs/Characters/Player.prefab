@@ -85,7 +85,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 558257294405139817}
-  - component: {fileID: 558257294405139820}
   - component: {fileID: 558257294405139823}
   - component: {fileID: 558257294405139822}
   - component: {fileID: 558257294405139821}
@@ -117,22 +116,8 @@ Transform:
   - {fileID: 558257295114270420}
   - {fileID: 3585210161844931589}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &558257294405139820
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558257294405139816}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.4
-  m_Height: 1.9079133
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.88524145, z: 0}
 --- !u!143 &558257294405139823
 CharacterController:
   m_ObjectHideFlags: 0
@@ -166,7 +151,6 @@ MonoBehaviour:
   moveSpeed: 7
   turnSpeed: 10
   _turnTransform: {fileID: 558257294439106429}
-  _currentWeapon: {fileID: 5341176775648819022}
 --- !u!114 &558257294405139821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +224,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f6d6c281-52ad-41c5-81d0-bc3fd813c955
     m_ActionName: OnFoot/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 558257294405139810}
+        m_TargetAssemblyTypeName: Project3.Inputs.InputReader, Assembly-CSharp
+        m_MethodName: OnInventoryPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 585e3ded-ce4f-4e42-ab17-8ba6fd78cbdd
+    m_ActionName: OnFoot/Inventory[/Keyboard/i]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: OnFoot
@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b6e420820cc3a46af7a803e07b2b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weapons: []
 --- !u!1 &558257294439106428
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &558257294537222788
 Transform:
   m_ObjectHideFlags: 0
@@ -781,6 +782,7 @@ GameObject:
   - component: {fileID: 7065523721901018566}
   - component: {fileID: 4796529497665155826}
   - component: {fileID: 3729309938326892450}
+  - component: {fileID: 358718292244551669}
   m_Layer: 5
   m_Name: CurrentHealth
   m_TagString: Untagged
@@ -846,6 +848,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &358718292244551669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762398551943513708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55c1c310d25256340bbfa70847260162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3353683528310036067
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,7 +937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0baa8be4bb77f41bc8b48755aebcc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackSO: {fileID: 11400000, guid: 14515d200391a094c8338dabcb435afd, type: 2}
+  radius: 0.4
 --- !u!1 &4078573141746160669
 GameObject:
   m_ObjectHideFlags: 0
