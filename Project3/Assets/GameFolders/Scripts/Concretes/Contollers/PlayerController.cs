@@ -22,7 +22,6 @@ namespace Project3.Controllers
 
         IInputReader _InputReader;
         IMover _mover;
-
         Vector3 direction;
         Vector2 rotation;
 
