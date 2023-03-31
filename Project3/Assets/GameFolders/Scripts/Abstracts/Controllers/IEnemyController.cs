@@ -4,6 +4,7 @@ using Project3.Controllers;
 using UnityEditor;
 using UnityEngine;
 using Project3.Animations;
+using Project3.Combats;
 
 namespace Project3.Abstracts.Controllers
 {
@@ -14,6 +15,7 @@ namespace Project3.Abstracts.Controllers
         CharacterAnimations Animation { get; }
         Transform Target { get; set; }
         float Magnitude { get; }
+        Dead dead { get; }
     }
 
 }

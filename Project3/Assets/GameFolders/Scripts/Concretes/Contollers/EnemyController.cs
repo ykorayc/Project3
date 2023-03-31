@@ -11,6 +11,7 @@ using Project3.Controllers;
 using Project3.States;
 using Project3.States.EnemyStates;
 using Project3.Abstracts.States;
+using Project3.Combats;
 
 namespace Project3.Controllers
 {
@@ -36,6 +37,8 @@ namespace Project3.Controllers
 
         public float Magnitude => _navMeshAgent.velocity.magnitude;
 
+        public Dead dead { get; private set; }
+
         private void Awake()
         {
             Mover = new MoveWithNavMesh(this);
@@ -44,13 +47,14 @@ namespace Project3.Controllers
             _health= GetComponent<IHealth>();
             Inventory = GetComponent<InventoryController>();
             _stateMachine = new StateMachine();
+            dead = GetComponent<Dead>();
         }
         private void Start()
         {
             Target = FindObjectOfType<PlayerController>().transform;
             ChaseState chaseState = new ChaseState(this);
             AttackState attackState = new AttackState(this);
-            DeadState deadState = new DeadState();
+            DeadState deadState = new DeadState(this);
 
             _stateMachine.AddState(chaseState, attackState, () => CanAttack);
             _stateMachine.AddState(attackState, chaseState, () => !CanAttack);

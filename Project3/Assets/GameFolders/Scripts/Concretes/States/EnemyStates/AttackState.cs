@@ -24,6 +24,11 @@ namespace Project3.States.EnemyStates
 
         public void Tick()
         {
+            _enemyController.transform.LookAt(_enemyController.Target);
+            //Animasyon yere yatiyordu dondugumuzde. Bunu duzeltmek icin rotation'ini hep y'sinden cevirmemiz lazým.
+            //x ve z'sini rotate edersek karakter asagi saga sola egilir.
+            //Degisim sadece y ekseninde olur, x ekseninde olmaz.
+            _enemyController.transform.eulerAngles=new Vector3(0f,_enemyController.transform.eulerAngles.y,0f);
         }
 
         public void TickFixed()
