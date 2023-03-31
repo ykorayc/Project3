@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Project3.ScriptableObjects;
+using Project3.Managers;
+
 namespace Project3.Controllers
 {
     public class SpawnerController : MonoBehaviour
@@ -16,14 +18,16 @@ namespace Project3.Controllers
         private void Update()
         {
             currentTime += Time.deltaTime;
-            if (currentTime > _maxTime)
+            if (currentTime > _maxTime && EnemyManager.instance.canSpawn)
             {
                 Spawn();
             }
         }
         public void Spawn()
         {
-            Instantiate(spawnerSO.enemyPrefab, spawnerSO.enemyPrefab.gameObject.transform.position, Quaternion.identity);
+            EnemyController enemyController=Instantiate(spawnerSO.enemyPrefab, this.transform.position, Quaternion.identity);
+            //EnemyManager icerisinde olusturdugumuz list'in icerisine, olusturdugumuz enemy prefablerini atiyoruz.
+            EnemyManager.instance.SetEnemyController(enemyController);
             currentTime = 0f;
             _maxTime = spawnerSO.randomSpawnTime;
         }
