@@ -17,7 +17,7 @@ namespace Project3.States.EnemyStates
         public void OnEnter()
         {
             _enemyController.dead.DeadAction();
-            _enemyController.Animation.DeadAnimation();
+            _enemyController.Animation.DeadAnimation("dying");
             _enemyController.transform.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         }
 

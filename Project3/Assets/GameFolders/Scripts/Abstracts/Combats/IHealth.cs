@@ -8,6 +8,7 @@ namespace Project3.Abstracts.Combats
     {
         bool isDead { get; }
         void TakeDamage(int damage);
+        event System.Action OnDead;
         
     }
 

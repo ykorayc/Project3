@@ -21,9 +21,9 @@ namespace Project3.Animations
         {
             _animator.SetBool("isAttack",isattackButtonPressed);
         }
-        public void DeadAnimation()
+        public void DeadAnimation(string parameter)
         {
-            _animator.SetTrigger("dying"); 
+            _animator.SetTrigger(parameter); 
         }
     }
 

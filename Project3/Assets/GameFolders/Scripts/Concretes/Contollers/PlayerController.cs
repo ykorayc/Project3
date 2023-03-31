@@ -7,6 +7,8 @@ using Project3.Animations;
 using Project3.Movements;
 using Project3.Controllers;
 using Project3.Abstracts.Controllers;
+using Project3.Abstracts.Combats;
+
 namespace Project3.Controllers
 {
     public class PlayerController : MonoBehaviour, IEntityController
@@ -33,6 +35,8 @@ namespace Project3.Controllers
 
         InventoryController _inventory;
 
+        IHealth health;
+
         private void Awake()
         {
             _InputReader = GetComponent<IInputReader>();
@@ -41,9 +45,20 @@ namespace Project3.Controllers
             xRotation = new RotatorX(this);
             yRotation = new RotatorY(this);
             _inventory = GetComponent<InventoryController>();
+            health = GetComponent<IHealth>();
         }
+        private void OnEnable()
+        {
+            health.OnDead +=()=> _animations.DeadAnimation("dead");
+        }
+        //private void OnDisable()
+        //{
+        //    health.OnDead -=()=> _animations.DeadAnimation("dead");
+        //}
         private void Update()
         {
+            if (health.isDead) return; //Bu kod cok onemli, bu kod sayesinde player oldugunde hicbir sey yapamayacak.
+                                       //Update fonksiyonu calismayacak.
             direction = _InputReader.direction;
             rotation = _InputReader.rotation;
             xRotation.RotationAciton(rotation.x, turnSpeed);
@@ -62,11 +77,13 @@ namespace Project3.Controllers
         }
         private void FixedUpdate()
         {
+            if (health.isDead) return;
             _mover.MoveAction(direction,moveSpeed);  //Burdan alýrsak her turlu oyun calisirken degiskeni degistirdigimizde RunTime'dan sonucu gorebiliriz.
             
         }
         private void LateUpdate()
         {
+            if (health.isDead) return;
             //Animasyon Ýslemlerimizi LateUpdate'te yapariz.
             _animations.MoveAnimation(direction.magnitude);
             _animations.AttackAnimation(_InputReader.isAttackButtonPress);
