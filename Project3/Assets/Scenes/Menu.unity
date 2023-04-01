@@ -353,6 +353,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8157138715857784481, guid: c78beb8f36e08684681b39935db9fe34, type: 3}
+      propertyPath: _waveMaxCount
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8650060850612252044, guid: c78beb8f36e08684681b39935db9fe34, type: 3}
       propertyPath: m_Name
       value: GameManager

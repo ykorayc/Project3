@@ -11,6 +11,7 @@ namespace Project3.Managers
         [SerializeField] int _maxEnemyCount=50;
         [SerializeField] List<EnemyController> _enemies;
         public bool canSpawn=> _maxEnemyCount>_enemies.Count;
+        public bool IsListEmpty => _enemies.Count <= 0;
         private void Awake()
         {
             SetSingletonThisObject(this);
@@ -24,6 +25,7 @@ namespace Project3.Managers
         public void RemoveEnemyController(EnemyController enemyController)
         {
             _enemies.Remove(enemyController);
+            GameManager.instance.DecreaseWaveCount();
         }
     }
 

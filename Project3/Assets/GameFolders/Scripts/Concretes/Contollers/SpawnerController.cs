@@ -18,7 +18,7 @@ namespace Project3.Controllers
         private void Update()
         {
             currentTime += Time.deltaTime;
-            if (currentTime > _maxTime && EnemyManager.instance.canSpawn)
+            if (currentTime > _maxTime && EnemyManager.instance.canSpawn && !GameManager.instance.isWaveFinished)
             {
                 Spawn();
             }
