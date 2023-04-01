@@ -19,13 +19,14 @@ namespace Project3.ScriptableObjects
         [SerializeField] int damage;
         [SerializeField] float attackMaxDelay;
         [SerializeField] AnimatorOverrideController animatorOveride;
+        [SerializeField] AudioClip clip;
 
         public float _floatValue => floatValue;
         public LayerMask _layerMask => layerMask;
         public int _damage => damage;
         public float _attackMaxDelay => attackMaxDelay;
         public AnimatorOverrideController _animatorOveride => animatorOveride;
-
+        public AudioClip _clip => clip;
         public IAttackType GetAttackType(Transform transform)
         {
             if (_attackType == AttackTypeEnum.Range)

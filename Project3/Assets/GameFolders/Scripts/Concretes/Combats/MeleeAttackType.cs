@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Project3.Abstracts.Combats;
 using Project3.ScriptableObjects;
+using Project3.Managers;
+
 namespace Project3.Combats
 {
     public class MeleeAttackType : IAttackType
@@ -25,7 +27,9 @@ namespace Project3.Combats
                     health.TakeDamage(_attackSO._damage);
                 }
             }
+            SoundManager.instance.MeleeAttackSound(_attackSO._clip,_transformObject.position);
         }
+       
     }
 
 }

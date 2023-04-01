@@ -20,3 +20,4 @@ MonoBehaviour:
   damage: 10
   attackMaxDelay: 0.25
   animatorOveride: {fileID: 22100000, guid: a5d26c97a43fe3547aaa99c6f8712850, type: 2}
+  clip: {fileID: 8300000, guid: 6e8977724d2410d46ac0e23d79554da9, type: 3}

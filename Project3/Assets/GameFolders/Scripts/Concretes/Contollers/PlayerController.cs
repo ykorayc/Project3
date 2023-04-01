@@ -19,6 +19,7 @@ namespace Project3.Controllers
 
         [SerializeField] Transform _turnTransform;
 
+        [SerializeField] Transform _ribTransform;
 
         public Transform turnTransform => _turnTransform;  //Baska scriptlerde kullanabilmek icin Property'sini olusturmak zorundayiz.
 
@@ -29,7 +30,7 @@ namespace Project3.Controllers
 
         IRotator xRotation;
         IRotator yRotation;
-
+        IRotator _ribRotator;
 
         CharacterAnimations _animations;
 
@@ -46,6 +47,7 @@ namespace Project3.Controllers
             yRotation = new RotatorY(this);
             _inventory = GetComponent<InventoryController>();
             health = GetComponent<IHealth>();
+            _ribRotator = new RibRotator(_ribTransform);
         }
         private void OnEnable()
         {
@@ -87,6 +89,7 @@ namespace Project3.Controllers
             //Animasyon Ýslemlerimizi LateUpdate'te yapariz.
             _animations.MoveAnimation(direction.magnitude);
             _animations.AttackAnimation(_InputReader.isAttackButtonPress);
+            _ribRotator.RotationAciton(_InputReader.rotation.y*-1,turnSpeed);
         }
 
     }
