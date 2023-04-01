@@ -9,22 +9,21 @@ namespace Project3.Controllers
     public class WeaponController : MonoBehaviour
     {
         [SerializeField] bool _canFire;
-        [SerializeField] Transform transformObject;
        
         float currentTime = 0.0f;
         IAttackType _attackType;
         LayerMask _layerMask;
 
-        [SerializeField] AttackSO _attackSO;
-        public AttackSO attackSO => _attackSO;
+        public AnimatorOverrideController AnimatorOverride=>_attackType.AttackInfo._animatorOveride;
         private void Awake()
         {
-            _attackType = _attackSO.GetAttackType(transformObject);
+            _attackType = GetComponent<IAttackType>();
         }
+       
         private void Update()
         {
             currentTime += Time.deltaTime;
-            _canFire = currentTime > _attackSO._attackMaxDelay;
+            _canFire = currentTime > _attackType.AttackInfo._attackMaxDelay;
         }
         public void Atack()
         {

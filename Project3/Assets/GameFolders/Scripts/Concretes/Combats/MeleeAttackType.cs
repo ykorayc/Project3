@@ -7,15 +7,13 @@ using Project3.Managers;
 
 namespace Project3.Combats
 {
-    public class MeleeAttackType : IAttackType
+    public class MeleeAttackType :MonoBehaviour, IAttackType
     {
-        Transform _transformObject;
-        AttackSO _attackSO;
-        public MeleeAttackType(Transform transformObject,AttackSO attackSO)
-        {
-            _transformObject = transformObject;
-            _attackSO = attackSO;
-        }
+        [SerializeField] Transform _transformObject;
+        [SerializeField] AttackSO _attackSO;
+
+        public AttackSO AttackInfo => _attackSO;
+
         public void AttackAction()
         {
             Vector3 attackPoint = _transformObject.position;

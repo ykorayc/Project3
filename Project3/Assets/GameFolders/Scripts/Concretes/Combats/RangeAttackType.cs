@@ -4,19 +4,18 @@ using UnityEngine;
 using Project3.Abstracts.Combats;
 using Project3.ScriptableObjects;
 using Project3.Managers;
+using Project3.Controllers;
 
 namespace Project3.Combats
 {
-    public class RangeAttackType : IAttackType
+    public class RangeAttackType : MonoBehaviour,IAttackType
     {
-        Camera _camera;
-        AttackSO _attackSO;
-        public RangeAttackType(Transform transformObject, AttackSO attackSO)
-        {
-            _camera = transformObject.GetComponent<Camera>();
-            _attackSO = attackSO;
+        [SerializeField] Camera _camera;
+        [SerializeField] AttackSO _attackSO;
+        [SerializeField] Transform _bulletPoint;
+        [SerializeField] BulletFxController bulletFx;
+        public AttackSO AttackInfo => _attackSO;
 
-        }
         public void AttackAction()
         {
             Ray _ray = _camera.ViewportPointToRay(Vector3.one / 2);//Tam orta nokta.
@@ -27,6 +26,8 @@ namespace Project3.Combats
                     health.TakeDamage(_attackSO._damage);
                 }
             }
+            var bullet = Instantiate(bulletFx, _bulletPoint.position, _bulletPoint.rotation);
+            bullet.SetDirection(_ray.direction);
             SoundManager.instance.RangeAttackSound(_attackSO._clip,_camera.transform.position);
         }
 

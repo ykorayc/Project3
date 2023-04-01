@@ -39,7 +39,7 @@ namespace Project3.Controllers
                 if (currentWeapon == weapon)
                 {
                     weapon.gameObject.SetActive(true);
-                    _animator.runtimeAnimatorController = currentWeapon.attackSO._animatorOveride;
+                    _animator.runtimeAnimatorController = currentWeapon.AnimatorOverride;
                 }
                 else
                 {
